@@ -2,8 +2,8 @@
 	start = init 
 	pl = pull
 	psh = push
-	hamza = config --global user.name "hamza_rebb"
-	mail = config --global user.mail "hamza.rebb@gmail.com"
+	example_name = config --global user.name "example_name"
+	mail = config --global user.mail "example.mail@gmail.com"
 	br = branch
 	fusion = merge
 	message = commit -m 
