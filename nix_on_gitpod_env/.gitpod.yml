@@ -1,0 +1,16 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Install Nix
+    init: |
+      # Install Nix
+      sh <(curl -L https://nixos.org/nix/install) --daemon
+      . /home/gitpod/.nix-profile/etc/profile.d/nix.sh
+
+      # Update the Nix channels
+      nix-channel --update
+
+      # Install a package (e.g., Git)
+      nix-env -iA nixpkgs.git
+    command: nix-shell
