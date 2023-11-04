@@ -1,0 +1,20 @@
+image:
+  file: Dockerfile
+
+services:
+  - name: nix
+    command: docker-compose up -d
+
+tasks:
+  - name: Start Nix and Docker Compose
+    init: |
+      # Install Docker Compose
+      curl -fsSL https://get.docker.com -o get-docker.sh
+      sh get-docker.sh
+      sudo usermod -aG docker gitpod
+      newgrp docker
+
+      # Run Docker Compose up
+      docker-compose up -d
+
+    command: docker exec -it nix-container /bin/sh

@@ -1,0 +1,7 @@
+version: '3'
+services:
+  nix:
+    image: nixos/nix:latest
+    container_name: nix-container
+    command: tail -f /dev/null
+    tty: true
